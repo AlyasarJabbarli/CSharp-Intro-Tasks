@@ -1,0 +1,14 @@
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\bin\Debug\netcoreapp3.1\HomeWork9.exe
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\bin\Debug\netcoreapp3.1\HomeWork9.deps.json
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\bin\Debug\netcoreapp3.1\HomeWork9.runtimeconfig.json
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\bin\Debug\netcoreapp3.1\HomeWork9.runtimeconfig.dev.json
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\bin\Debug\netcoreapp3.1\HomeWork9.dll
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\bin\Debug\netcoreapp3.1\HomeWork9.pdb
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.csproj.AssemblyReference.cache
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.AssemblyInfoInputs.cache
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.AssemblyInfo.cs
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.csproj.CoreCompileInputs.cache
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.dll
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.pdb
+C:\Users\Алясар\source\repos\HomeWork9\HomeWork9\obj\Debug\netcoreapp3.1\HomeWork9.genruntimeconfig.cache
