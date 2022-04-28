@@ -1,0 +1,6 @@
+Task - 1
+Daxil Edilen Ayin Tarixi Yoxlayan Regular Expression  (dd.mm.yyyy (
+
+08.10.2020  ))
+
+^([0-2][0-9]|(3)[0-1])(\.)(((0)[0-9])|((1)[0-2]))(\.)\d{4}$
