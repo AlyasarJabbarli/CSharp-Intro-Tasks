@@ -1,0 +1,14 @@
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\bin\Debug\netcoreapp3.1\Lasthomework.exe
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\bin\Debug\netcoreapp3.1\Lasthomework.deps.json
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\bin\Debug\netcoreapp3.1\Lasthomework.runtimeconfig.json
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\bin\Debug\netcoreapp3.1\Lasthomework.runtimeconfig.dev.json
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\bin\Debug\netcoreapp3.1\Lasthomework.dll
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\bin\Debug\netcoreapp3.1\Lasthomework.pdb
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.csproj.AssemblyReference.cache
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.AssemblyInfoInputs.cache
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.AssemblyInfo.cs
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.csproj.CoreCompileInputs.cache
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.dll
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.pdb
+C:\Users\Алясар\source\repos\Lasthomework\Lasthomework\obj\Debug\netcoreapp3.1\Lasthomework.genruntimeconfig.cache

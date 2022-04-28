@@ -1,0 +1,178 @@
+﻿using Lasthomework.Enums;
+using Lasthomework.Exceptions;
+using Lasthomework.Models;
+using Lasthomework.Services;
+using System;
+using System.Text.RegularExpressions;
+
+namespace Lasthomework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            LibraryManager libraryManager = new LibraryManager();
+            do
+            {
+                Console.WriteLine($"\n===== Hello =====\n" + "\n" +
+                    $"1. -- Show all Books\n" +
+                    $"2. -- Add Book\n" +
+                    $"3. -- Filter Book\n" +
+                    $"4. -- Search Book by parameters\n" +
+                    $"5. -- Show book info\n" +
+                    $"6. -- Exit\n" +
+                    $"+_+_+_+_+_+_+_+_+_+_+_+_+ ");
+
+                string userchoice = Console.ReadLine();
+                byte userchoicenum;
+
+                while (!byte.TryParse(userchoice, out userchoicenum) || userchoicenum < 1 || userchoicenum > 6)
+                {
+                    Console.WriteLine("\nYou need to choose numbers from 1 to 6 without using any other symbols.\nTry again\n");
+                    userchoice = Console.ReadLine();
+                }
+                Console.Clear();
+                switch (userchoicenum)
+                {
+                    case 1:
+                        ShowAllBooks(ref libraryManager);
+                        break;
+                    case 2:
+                        AddBook(ref libraryManager);
+                        break;
+                    case 3:
+                        Filter(ref libraryManager);
+                        break;
+                    case 4:
+                        Search(ref libraryManager);
+                        break;
+                    case 5:
+                        ShowInfo(ref libraryManager);
+                        break;
+                    case 6:
+                        return;
+                }
+            } while (true);
+        }
+        static void ShowAllBooks(ref LibraryManager libraryManager)
+        {
+            if (libraryManager.Books.Count > 0)
+            {
+                foreach (var item in libraryManager.Books)
+                {
+                    Console.WriteLine($"{item}\n");
+                }
+            }
+            else
+            {
+                throw new BookNotFoundException("There are no books");
+            }
+        }
+        static void AddBook(ref LibraryManager libraryManager)
+        {
+            Console.WriteLine("\nWelcome to book adder!");
+            Console.WriteLine("\nPlease write name of Book that you are going to add:");
+            string name = Console.ReadLine();
+
+            while (!Regex.IsMatch(name, @"\A[\p{L}\s]+\Z") || !Regex.IsMatch(name, @"^\S+(?: \S+)*$"))
+            {
+                Console.WriteLine($"\nGiven name {name} for Book is not appropriate.\nIt must not contain something other than letters or whitespaces.");
+                name = Console.ReadLine();
+            }
+
+            Console.WriteLine("\nWrite the Author Name:");
+            string author = Console.ReadLine();
+
+            while (!Regex.IsMatch(author, @"\A[\p{L}\s]+\Z") || !Regex.IsMatch(author, @"^\S+(?: \S+)*$"))
+            {
+                Console.WriteLine($"\nGiven Author Name {author} for Book is not appropriate.\nIt must not contain something other than letters or whitespaces.");
+                author = Console.ReadLine();
+            }
+
+            Console.WriteLine("\nWrite the page count");
+            string pagecount = Console.ReadLine();
+
+            while (!Regex.IsMatch(pagecount, @"^\d+$"))
+            {
+                Console.WriteLine($"\nSorry but page count must be in numbers!");
+                pagecount = Console.ReadLine();
+            }
+
+            int pages = int.Parse(pagecount);
+
+            Console.WriteLine("Choose the Genre of your Book:");
+
+            foreach (var item in Enum.GetValues(typeof(Genres)))
+            {
+                Console.WriteLine($"{(int)item} -- {item.ToString().Replace('_', ' ')}");
+            }
+
+            string genrestr = Console.ReadLine();
+            int genreint;
+
+            while (!int.TryParse(genrestr, out genreint) || genreint < 1 || genreint > 4)
+            {
+                Console.WriteLine("Choose from range 1 to 4");
+                genrestr = Console.ReadLine();
+            }
+            Genres genre = (Genres)genreint;
+
+            Book book = new Book(name, author, pages, genre);
+            Console.WriteLine("Success!");
+            libraryManager.Add(book);
+        }
+        static void Filter(ref LibraryManager libraryManager)
+        {
+            Console.WriteLine("Welcome to book filter!");
+
+            Console.WriteLine("\nWrite the Author Name:");
+            string author = Console.ReadLine();
+
+            while (!Regex.IsMatch(author, @"\A[\p{L}\s]+\Z") || !Regex.IsMatch(author, @"^\S+(?: \S+)*$"))
+            {
+                Console.WriteLine($"\nGiven Author Name {author} for Book is not appropriate.\nIt must not contain something other than letters or whitespaces.");
+                author = Console.ReadLine();
+            }
+
+            foreach (var item in Enum.GetValues(typeof(Genres)))
+            {
+                Console.WriteLine($"{(int)item} -- {item.ToString().Replace('_', ' ')}");
+            }
+
+            Console.WriteLine("Write Down the number of Genre from GenresList that you see upper:");
+
+            string genrestr = Console.ReadLine();
+            int genreint;
+
+            while (!int.TryParse(genrestr, out genreint) || genreint < 1 || genreint > 4)
+            {
+                Console.WriteLine("Choose from range 1 to 4");
+                genrestr = Console.ReadLine();
+            }
+
+            Genres genre = (Genres)genreint;
+
+            foreach (var item in libraryManager.Filter(author, genre))
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static void Search(ref LibraryManager librarymanager)
+        {
+            Console.WriteLine("Write name, author name, genre or pagecount of book that you are looking for.");
+            string input = Console.ReadLine();
+
+            foreach (var item in librarymanager.Search(input))
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static void ShowInfo(ref LibraryManager libraryManager)
+        {
+            Console.WriteLine("Write name of book that you are looking for");
+            string name = Console.ReadLine();
+
+            Console.WriteLine($"{libraryManager.ShowInfo(name)}");
+        }
+    }
+}
